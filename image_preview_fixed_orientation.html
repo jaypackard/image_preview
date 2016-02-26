@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js"></script>
+    <script type="text/javascript" src="http://rawgit.com/blueimp/JavaScript-Load-Image/master/js/load-image.all.min.js"></script>
+    <script>
+      $(function() {
+        $("#image").change(function(){
+          var file = this.files[0];
+          loadImage.parseMetaData(
+            file,
+            function (data) {
+              var orientation = data.imageHead ? data.exif.get('Orientation') : null;
+              loadImage(
+                file,
+                function (img) {
+                  $('#preview').empty().append(img);
+                },
+                {maxWidth:300, maxHeight:400, crop:true, canvas:true, orientation:orientation} 
+              );
+            }
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="file" id="image"></input>
+    <div id="preview" style="width:300px; display: block"></div>
+  </body>
+</html>
+

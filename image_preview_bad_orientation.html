@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js"></script>
+    <script>
+      $(function() {
+        $("#image").change(function(){
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            $('#preview').attr('src', e.target.result);
+          }
+          reader.readAsDataURL(this.files[0]);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="file" id="image"></input>
+    <img id="preview" style="width:300px; display: block"></img>
+  </body>
+</html>
+
