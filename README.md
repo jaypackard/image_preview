@@ -1,1 +1,1 @@
-This shows how to fix the orientation of a photo when uploading it using the image's EXIF metadata.  image_preview_bad_orientation.html shows the bad orientation.  image_preview_fixed_orientation.html shows the good orientation.
+This shows how to fix the orientation of a photo when uploading it using the image's EXIF metadata. It uses the load-image library. image_preview_bad_orientation.html shows the bad orientation.  image_preview_fixed_orientation.html shows the good orientation.
